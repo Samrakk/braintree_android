@@ -37,7 +37,7 @@ internal data class BraintreeClientParams @VisibleForTesting constructor(
         private fun createUniqueSessionId() = UUIDHelper().formattedUUID
 
         private fun getAppPackageNameWithoutUnderscores(context: Context) =
-            context.applicationContext.packageName.replace("_", "")
+            context.applicationContext.packageName.replace("_", "").lowercase()
 
         private fun createDefaultReturnUrlScheme(context: Context) =
             "${getAppPackageNameWithoutUnderscores(context)}.braintree"
